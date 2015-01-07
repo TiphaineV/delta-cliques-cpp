@@ -1,9 +1,40 @@
-#include <iostream>
+#include "CliqueMaster.h"
+
 using namespace std;
 
-int main(int argc, char* argv[])
+CliqueMaster::CliqueMaster()
 {
-	  cout << "Hello World !" << endl;
-	    return 0;
+	
 }
 
+
+
+void CliqueMaster::getDeltaCliques(int delta)
+{
+
+}
+
+
+
+void printCliques()
+{
+}
+
+
+
+
+
+void addClique(Clique c)
+{
+}
+
+Clique getCliques
+{
+}
+
+
+
+	Clique S;
+        Clique R; //Pas de using namespace std, il faut donc mettrestd:: devant string
+	int times[NB liens];
+	int nodes[NB nodes];
