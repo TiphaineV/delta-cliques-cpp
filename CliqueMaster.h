@@ -3,6 +3,7 @@
 
 #include <string>
 #include <stack>
+#include <unordered_set>
 class CliqueMaster:
 {
 	public:
@@ -15,11 +16,11 @@ class CliqueMaster:
 	Clique getCliques
 
 	private:
-
-	Clique S;
-        Clique R; //Pas de using namespace std, il faut donc mettrestd:: devant string
-	int times[NB liens];
-	int nodes[NB nodes];
+	std::stack<Clique> S;	
+	std::unordered_set<Clique> S_set; 
+	std::stack<Clique> R;
+	std::map<unordered_set,int> times;
+	std::map<unordered_set,unorderded_set> times;
 };
 
 #endif

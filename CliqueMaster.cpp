@@ -11,6 +11,79 @@ CliqueMaster::CliqueMaster()
 
 void CliqueMaster::getDeltaCliques(int delta)
 {
+	while (!S.empty())
+	{
+		
+		c=getCliques();
+		ismax=true;
+		
+		td=c.getTd(times,delta);
+		if c._te =! td+delta
+		{
+			new_t=c.getLastTInInterval(times, nodes, td, delta);
+			if new_t!=None
+			{
+				c_add = Clique((c._X, (c._tb, new_t));
+				addClique(c_add);
+			}
+			else:
+			{		
+				c_add = Clique((c._X, (c._tb, td + delta)));
+				addClique(c_add);
+			}
+			is_max = false;
+		}
+		else
+		{
+		// cannot grow on the right
+
+		}
+
+
+		tp=c.getTp(times,delta);
+		if c._te =! tp+delta
+		{
+			new_t=c.getFirstTInInterval(times, nodes, tp, delta);
+			if new_t is not None:
+			{
+				c_add = Clique((c._X, (new_t , c._te)));
+				addClique(c_add);
+			}
+			else:
+			{
+				c_add = Clique((c._X, (tp - delta, c._te)));
+				addClique(c_add);
+			}
+			is_max = false;
+		}
+		else:
+		{
+		sys.stderr.write(str(c) + " cannot grow on the left side\n")
+		}
+
+
+
+		// Grow node set
+		candidates = c.getAdjacentNodes(times,nodes, delta);
+		for node in candidates:
+			if c.isClique(times, node, delta):
+				Xnew = set(c._X).union([node]);
+				c_add = Clique((frozenset(Xnew), (c._tb, c._te)));
+				self.addClique(c_add);
+				sys.stderr.write("Adding " + str(c_add) + " (node extension)\n");
+				is_max = false;
+
+		if is_max:
+			sys.stderr.write(str(c) + " is maximal\n")
+			R.add(c);
+
+
+
+		
+	}
+
+	return R;
+
 
 }
 
@@ -26,15 +99,18 @@ void printCliques()
 
 void addClique(Clique c)
 {
+	if S_set.count(c)>0
+	{
+		S_set.append(c);
+		S.push(c);
+	}
 }
 
-Clique getCliques
+Clique getCliques()
 {
+	c=S.top();
+	S.pop();
+	return c;
 }
 
 
-
-	Clique S;
-        Clique R; //Pas de using namespace std, il faut donc mettrestd:: devant string
-	int times[NB liens];
-	int nodes[NB nodes];
