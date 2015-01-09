@@ -4,6 +4,8 @@
 #include <string>
 #include <stack>
 #include <unordered_set>
+#include "Clique.h"
+
 class CliqueMaster:
 {
 	public:

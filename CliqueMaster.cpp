@@ -1,4 +1,8 @@
 #include "CliqueMaster.h"
+#include "Cliques.h"
+#include <string>
+#include <stack>
+#include <unordered_set>
 
 using namespace std;
 
@@ -11,11 +15,14 @@ CliqueMaster::CliqueMaster()
 
 void CliqueMaster::getDeltaCliques(int delta)
 {
+	bool is_max
+
+
 	while (!S.empty())
 	{
 		
 		c=getCliques();
-		ismax=true;
+		is_max=true;
 		
 		td=c.getTd(times,delta);
 		if c._te =! td+delta
@@ -69,8 +76,7 @@ void CliqueMaster::getDeltaCliques(int delta)
 			if c.isClique(times, node, delta):
 				Xnew = set(c._X).union([node]);
 				c_add = Clique((frozenset(Xnew), (c._tb, c._te)));
-				self.addClique(c_add);
-				sys.stderr.write("Adding " + str(c_add) + " (node extension)\n");
+				addClique(c_add);
 				is_max = false;
 
 		if is_max:
